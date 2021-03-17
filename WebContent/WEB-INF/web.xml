@@ -23,7 +23,7 @@
 	
 	<servlet>
 		<servlet-name>bankbook</servlet-name>
-		<servlet-class>com.wong.s1.bankbook.BankbookController</servlet-class>
+		<servlet-class>com.wong.s1.bankbook.BankBookController</servlet-class>
 	</servlet>
 	
 	<servlet-mapping>

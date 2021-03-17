@@ -1,4 +1,4 @@
-package com.wong.s1.bank;
+package com.wong.s1.bankbook;
 
 import java.io.IOException;
 
@@ -49,11 +49,13 @@ public class BankBookController extends HttpServlet {
 		ActionFoward actionFoward = null;
 		
 		try {
-		if(uri.equals("bankbookList.do")) {
-		actionFoward = bankBookService.getList(request);
-		}
+			if(uri.equals("bankbookList.do")) {
+				actionFoward = bankBookService.getList(request);
+			}else if(uri.equals("bankbookSelect.do")) {
+			actionFoward = bankBookService.getSelect(request);
+			}
 		}catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}
 	
 		//forward, Redirect

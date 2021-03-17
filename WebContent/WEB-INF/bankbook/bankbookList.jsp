@@ -1,4 +1,4 @@
-<%@page import="com.wong.s1.bank.BankBookDTO"%>
+<%@page import="com.wong.s1.bankbook.BankBookDTO"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -61,15 +61,16 @@
 		<tbody>
 		<% for(int i=0;i<ar.size();i++){ %>
 			<tr>
-				<td><%=ar.get(i).getBookName() %></td>
-				<td><%=ar.get(i).getBookRate() %></td>
-				<td><%=ar.get(i).getBookSale() %></td>
+				<td><a href="./bankbookSelect.do?bookNumber=<%= ar.get(i).getBookNumber() %>"><%=ar.get(i).getBookName() %></a></td>
+				<td><a href="./bankbookSelect.do"><%=ar.get(i).getBookRate() %></a></td>
+				<td><a href="./bankbookSelect.do"><%=ar.get(i).getBookSale() %></a></td>
 			</tr>
 			<%} %>
 		</tbody>
 		
 		</table>
 		
+		<a href="./bankbookWrite.do" class="btn btn-danger">WRITE</a>
 	
 	</div>
 </div>		

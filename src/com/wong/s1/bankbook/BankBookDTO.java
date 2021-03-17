@@ -1,4 +1,4 @@
-package com.wong.s1.bank;
+package com.wong.s1.bankbook;
 
 public class BankBookDTO {
 
