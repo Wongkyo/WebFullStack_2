@@ -20,6 +20,7 @@ public class BankBookService {
 			if(method.toUpperCase().equals("GET")) {
 				BankBookDTO bankBookDTO = new BankBookDTO();
 				bankBookDTO.setBookNumber(request.getParameter("number"));
+				//여기 에서 setbooknumber가 long 타입이라고 오류가 나는거같은데 어떻게 바꿔야 할까요??
 				bankBookDTO.setBookName(request.getParameter("name"));
 				bankBookDTO.setBookRate(request.getParameter("rate"));
 				bankBookDTO.setBookSale(request.getParameter("sale"));
