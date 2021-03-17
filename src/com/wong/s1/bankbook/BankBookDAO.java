@@ -32,7 +32,7 @@ public class BankBookDAO {
 			st.setDouble(3, bankBookDTO.getBookRate());
 			st.setString(4, bankBookDTO.getBookSale());
 			
-			String result = st.enquoteLiteral(null);
+			String result = ?? 어떤 타입으로 넣어야하나요??
 			
 			st.close();
 			con.close();
