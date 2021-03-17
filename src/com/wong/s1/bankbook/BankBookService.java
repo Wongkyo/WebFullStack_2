@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.wong.s1.member.MemberDTO;
 import com.wong.s1.util.ActionFoward;
 
 public class BankBookService {
@@ -12,21 +13,31 @@ public class BankBookService {
 		
 		
 
-		public ActionFoward bankbookWrite(HttpServletRequest request)throws Exception{
+		
+		
+		
+		
+		public ActionFoward setWrite(HttpServletRequest request)throws Exception{
 			ActionFoward actionFoward = new ActionFoward();
-			String method = request.getMethod();
-			actionFoward.setPath("/WEB-INF/bankbook/bankbookWrite.jsp");
+			System.out.println("setWrite");
+			//GET
+			actionFoward.setPath("../WEB-INF/bankbook/bankbookWrite.jsp");
 			actionFoward.setCheck(true);
-			if(method.toUpperCase().equals("GET")) {
-				BankBookDTO bankBookDTO = new BankBookDTO();
-				bankBookDTO.setBookNumber(request.getParameter("number"));
-				//여기 에서 setbooknumber가 long 타입이라고 오류가 나는거같은데 어떻게 바꿔야 할까요??
-				bankBookDTO.setBookName(request.getParameter("name"));
-				bankBookDTO.setBookRate(request.getParameter("rate"));
-				bankBookDTO.setBookSale(request.getParameter("sale"));
 			
+			if(request.getMethod().toUpperCase().equals("POST")) {
+				BankBookDTO bankBookDTO = new BankBookDTO();
+				bankBookDTO.setBookName(request.getParameter("bookname"));
+				bankBookDTO.setBookRate(Double.parseDouble(request.getParameter("bookRate")));
+				bankBookDTO.setBookSale(request.getParameter("bookSale"));
+				//DAO 작업
+				int result = bankBookDAO.setWrite(bankBookDTO);
+				actionFoward.setPath("./bankbookList.do");
+				actionFoward.setCheck(false);
 			}
-		}
+		
+			return actionFoward;
+			}
+		
 		
 		
 		

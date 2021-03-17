@@ -10,7 +10,7 @@ import java.util.List;
 public class BankBookDAO {
 
 		
-		public int getWrite(BankBookDTO bankBookDTO)throws Exception{
+		public int setWrite(BankBookDTO bankBookDTO)throws Exception{
 			//1. 로그인 정보 
 			String user="user01";
 			String password="user01";
@@ -23,14 +23,13 @@ public class BankBookDAO {
 			//3. 로그인 Connection
 			Connection con = DriverManager.getConnection(url, user, password);
 			
-			String sql = " insert into bankbook values(?,?,?,?) ";
+			String sql = " insert into bankbook values(bank_seq.nextavl,?,?,?) ";
 		
 			PreparedStatement st = con.prepareStatement(sql);
 			
-			st.setLong(1, bankBookDTO.getBookNumber());
-			st.setString(2, bankBookDTO.getBookName());
-			st.setDouble(3, bankBookDTO.getBookRate());
-			st.setString(4, bankBookDTO.getBookSale());
+			st.setString(1, bankBookDTO.getBookName());
+			st.setDouble(2, bankBookDTO.getBookRate());
+			st.setString(3, bankBookDTO.getBookSale());
 			
 			int result = st.executeUpdate();
 			

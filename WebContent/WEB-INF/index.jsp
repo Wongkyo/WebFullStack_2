@@ -30,7 +30,7 @@
         </ul>
       </li>
       <li><a href="./bankbook/bankbookList.do">BankBook</a></li>
-    </ul>
+    </ul>	
     <ul class="nav navbar-nav navbar-right">
       <li><a href="./member/memberJoin.do"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       <li><a href="./member/memberLogin.do"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
