@@ -12,6 +12,24 @@ public class BankBookService {
 		
 		
 
+		public ActionFoward bankbookWrite(HttpServletRequest request)throws Exception{
+			ActionFoward actionFoward = new ActionFoward();
+			String method = request.getMethod();
+			actionFoward.setPath("/WEB-INF/bankbook/bankbookWrite.jsp");
+			actionFoward.setCheck(true);
+			if(method.toUpperCase().equals("GET")) {
+				BankBookDTO bankBookDTO = new BankBookDTO();
+				bankBookDTO.setBookNumber(request.getParameter("number"));
+				bankBookDTO.setBookName(request.getParameter("name"));
+				bankBookDTO.setBookRate(request.getParameter("rate"));
+				bankBookDTO.setBookSale(request.getParameter("sale"));
+			
+			}
+		}
+		
+		
+		
+		
 		public void setBankBookDAO(BankBookDAO bankBookDAO) {
 			this.bankBookDAO = bankBookDAO;
 		}

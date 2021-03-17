@@ -10,7 +10,7 @@ import java.util.List;
 public class BankBookDAO {
 
 		
-		public String getWrite(BankBookDTO bankBookDTO)throws Exception{
+		public int getWrite(BankBookDTO bankBookDTO)throws Exception{
 			//1. 로그인 정보 
 			String user="user01";
 			String password="user01";
@@ -32,7 +32,7 @@ public class BankBookDAO {
 			st.setDouble(3, bankBookDTO.getBookRate());
 			st.setString(4, bankBookDTO.getBookSale());
 			
-			String result = ?? 어떤 타입으로 넣어야하나요??
+			int result = st.executeUpdate();
 			
 			st.close();
 			con.close();
