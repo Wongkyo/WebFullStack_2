@@ -23,7 +23,7 @@ public class BankBookDAO {
 			//3. 로그인 Connection
 			Connection con = DriverManager.getConnection(url, user, password);
 			
-			String sql = " insert into bankbook values(bank_seq.nextavl,?,?,?) ";
+			String sql = " insert into bankbook values(bank_seq.nextval,?,?,?) ";
 		
 			PreparedStatement st = con.prepareStatement(sql);
 			
